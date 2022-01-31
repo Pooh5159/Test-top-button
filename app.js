@@ -39,43 +39,6 @@ function showSlides(id, n) {
     dots[id.currentSlideIndex - 1].className += " active";
 }
 
-// var slideIndex = 1;
-
-// let slides = ''
-// let m = 0;
-
-// function plusSlides(id, n) {
-//     var slides = document.querySelectorAll(`#${id} .mySlides`);
-//     var dot = document.querySelectorAll(`#${id} .dot`);
-//     if (m + n == slides.length) {
-//         n = 0 - m
-//     }
-//     if (m + n == -1) {
-//         n = slides.length - 1
-//     }
-//     for (let i = 0; i < slides.length; i++) {
-//         slides[i].style.display = "none";
-//         dot[i].classList.remove("active");
-//     }
-//     slides[m + n].style.display = "block";    
-//     dot[m + n].classList.add("active");    
-//     m = m + n
-// }
-
-// function currentSlide(id, n) {
-//     var dot = document.querySelectorAll(`#${id} .dot`);
-//     var slides = document.querySelectorAll(`#${id} .mySlides`);
-//     for (let i = 0; i < dot.length; i++) {
-//         dot[i].classList.remove("active");
-//     }
-//     for (let i = 0; i < slides.length; i++) {
-//         console.log(slides[i]);
-//         slides[i].style.display = "none";
-//     }
-//     dot[n].classList.add("active");
-//     slides[n].style.display = "block";
-// }
-
 
 // SCRIPT LIGHTBOX
 
@@ -111,4 +74,26 @@ span.onclick = function () {
     modal.classList.add("dnone")
     let method = document.querySelector("#myModal").classList == "dnone" ? "play" : "pause";
     document.querySelector("#video")[method]();
+}
+
+
+// SCRIPT BUTTON TO TOP
+//Get the button:
+mybutton = document.getElementById("toTop");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
