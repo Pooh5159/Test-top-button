@@ -548,6 +548,10 @@ li {
     bottom: 2px
 }
 
+html {
+    scroll-behavior:smooth;
+}
+
 #toTop {
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
